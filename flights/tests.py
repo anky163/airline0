@@ -35,7 +35,7 @@ class FlightTestCase(TestCase):
         self.assertTrue(f.is_valid_flight())
 
     def test_invalid_flight_destination(self):
-        """The flight has airport AAA as both departure and arrival is in valid."""
+        """The flight has airport AAA as both departure and arrival is invalid."""
         a1 = Airport.objects.get(code="AAA")
         f = Flight.objects.get(origin=a1, destination=a1)
         self.assertFalse(f.is_valid_flight())
